@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <extension type="template" version="3.8" client="site" method="upgrade">
     <name>Bulmla!</name>
-    <version>1.0</version>
+    <version>0.1.0</version>
     <creationDate>18-Feb-2020</creationDate>
     <author>Patrick McGonigle</author>
     <authorEmail>patrick@mcgonigle.dev</authorEmail>
@@ -30,19 +30,11 @@
         <position>navigation</position>
         <position>navigationButtons</position>
         <position>hero</position>
-        <position>h</position>
+        <position>header</position>
         <position>level-left</position>
         <position>level-right</position>
         <position>aside-right</position>
         <position>aside-left</position>
-        <position>position-7</position>
-        <position>position-8</position>
-        <position>position-9</position>
-        <position>position-10</position>
-        <position>position-11</position>
-        <position>position-12</position>
-        <position>position-13</position>
-        <position>position-14</position>
         <position>footer</position>
     </positions>
 

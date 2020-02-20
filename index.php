@@ -85,10 +85,17 @@ tplBulmlaHelper::setMetadata();
 	</div>
 </section>
 
+
+
 <main id="main" class="container">
 <jdoc:include type="message" />
 <div class="columns">
 	<div class="column is-three-quarters">
+	<head>
+		<?php if ($this->countModules( 'head' )) : ?>
+		<jdoc:include type="modules" name="head" style="none" />
+		<?php endif; ?>
+	</head>
 	<jdoc:include type="component"/>
 	</div>
 	<div class="column">
