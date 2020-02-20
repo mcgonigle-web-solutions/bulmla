@@ -99,23 +99,21 @@ tplBulmlaHelper::setMetadata();
 	<jdoc:include type="component"/>
 	</div>
 	<div class="column">
-<?php if ($this->countModules('aside-right')) : ?>
-	<jdoc:include type="modules" name="aside-right" style="asideRight" />
-<?php endif; ?>
-</aside>
+	<?php if ($this->countModules('aside-right')) : ?>
+		<jdoc:include type="modules" name="aside-right" style="asideRight" />
+	<?php endif; ?>
+	</aside>
 	</div>
 </div>
-
 </main>
 
-<?php 
-/** Footer */
-?>
-
-<footer class="footer">
+<footer class="footer m-t-lg">
 <div class="content has-text-centered">
 <p>&copy; <?php echo date('Y'); ?> <?php echo tplBulmlaHelper::getSitename(); ?></p>
 <p>
+<p>
+
+</p>
 <strong>Bulma</strong> by <a href="https://jgthms.com">Jeremy Thomas</a>. The source code is licensed
 <a href="http://opensource.org/licenses/mit-license.php">MIT</a>.
 </p>
