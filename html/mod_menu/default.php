@@ -18,7 +18,7 @@ if ($tagId = $params->get('tag_id', ''))
 
 // The menu class is deprecated. Use nav instead
 ?>
-<ul class="menu-list<?php echo $class_sfx; ?> "<?php echo $id; ?>>
+<ul class="menu-list <?php echo $class_sfx; ?>"<?php echo $id; ?>>
 <?php foreach ($list as $i => &$item)
 {
 	$class = 'navbar-item item-' . $item->id;
@@ -36,6 +36,7 @@ if ($tagId = $params->get('tag_id', ''))
 	if (in_array($item->id, $path))
 	{
 		$class .= ' is-active';
+
 	}
 	elseif ($item->type === 'alias')
 	{
@@ -63,11 +64,10 @@ if ($tagId = $params->get('tag_id', ''))
 
 	if ($item->parent)
 	{
-		$class .= ' parent';
+		$class .= ' navbar-link is-hoverable' ;
 	}
 
-	echo '<li class="' . $class . '">';
-	
+	echo '<li class=" ' . $class . '">';
 
 	switch ($item->type) :
 		case 'separator':
@@ -85,13 +85,15 @@ if ($tagId = $params->get('tag_id', ''))
 	// The next item is deeper.
 	if ($item->deeper)
 	{
-		echo '<ul class="navbar-item">';
+		echo '<div class="navbar-dropdown">';
+
+		echo '<ul class="menu-list ">';
 	}
 	// The next item is shallower.
 	elseif ($item->shallower)
 	{
 		echo '</li>';
-		echo str_repeat('</ul></li>', $item->level_diff);
+		echo str_repeat('</ul></div></li>', $item->level_diff);
 	}
 	// The next item is on the same level.
 	else

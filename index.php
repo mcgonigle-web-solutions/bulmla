@@ -19,6 +19,20 @@ tplBulmlaHelper::loadCss();
 tplBulmlaHelper::loadJs();
 tplBulmlaHelper::setMetadata();
 
+// Use of Google Font
+if ($this->params->get('googleFont'))
+{
+	$font = $this->params->get('googleFontName');
+
+	// Handle fonts with selected weights and styles, e.g. Source+Sans+Condensed:400,400i
+	$fontStyle = str_replace('+', ' ', strstr($font, ':', true) ?: $font);
+
+	JHtml::_('stylesheet', 'https://fonts.googleapis.com/css?family=' . $font);
+	$this->addStyleDeclaration("
+	h1, h2, h3, h4, h5, h6, .site-title {
+		font-family: '" . $fontStyle . "', sans-serif;
+	}");
+}
 
 ?>
 <!DOCTYPE html>
@@ -31,6 +45,7 @@ tplBulmlaHelper::setMetadata();
 
 <?php echo tplBulmlaHelper::setAnalytics(0, 'your-analytics-id'); ?>
 
+
 <a href="<?php echo $this->baseurl; ?>/">
     <?php if ($this->params->get('sitedescription')) : ?>
         <?php echo '<div class="site-description">' . htmlspecialchars($this->params->get('sitedescription'), ENT_COMPAT, 'UTF-8') . '</div>'; ?>
@@ -39,9 +54,7 @@ tplBulmlaHelper::setMetadata();
 
 <nav class="navbar container" role="navigation" aria-label="main navigation">
 	<div class="navbar-brand">
-	<a class="logo" href="">
-	<jdoc:include type="modules" name="logo" style="none" />
-	</a>
+	<jdoc:include type="modules" name="logo" style="none" />	
 	<a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="Menu">
 		<span aria-hidden="true"></span>
 		<span aria-hidden="true"></span>
@@ -64,7 +77,7 @@ tplBulmlaHelper::setMetadata();
 <jdoc:include type="modules" name="hero" style="hero" />
 <?php endif; ?>
 
-<section class="m-t-lg">
+<section id="tiles" class="m-t-lg">
 	<div class="container">
 		<div class="tile is-ancestor">
 			<?php if ($this->countModules( 'tiles' )) : ?>
@@ -74,18 +87,13 @@ tplBulmlaHelper::setMetadata();
 	</div>
 </section>
 
-<section >
-	<div class="level container">
-		<?php if ($this->countModules( 'level-left' )) : ?>
-		<jdoc:include type="modules" name="level-left" />
+<section id="level">
+	<nav class="level is-mobile container">
+		<?php if ($this->countModules( 'level' )) : ?>
+		<jdoc:include type="modules" name="level" style="level" />
 		<?php endif; ?>
-		<?php if ($this->countModules( 'level-right' )) : ?>
-		<jdoc:include type="modules" name="tiles" style="none" />
-		<?php endif; ?>
-	</div>
+	</nav>
 </section>
-
-
 
 <main id="main" class="container">
 <jdoc:include type="message" />

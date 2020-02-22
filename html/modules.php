@@ -88,7 +88,16 @@ function modChrome_asideRight( $module, &$params, &$attribs )
 	echo $module->content;
 	
 	echo '</div>';
-	
-
 
   }
+
+  function modChrome_level( $module, &$params, &$attribs ) 
+  {
+  
+	  echo '<div class="level-item has-text-centered '.$params->get( 'moduleclass_sfx' ) .'">';
+	  
+	  echo $module->content;
+	  
+	  echo '</div>';
+  
+	}
