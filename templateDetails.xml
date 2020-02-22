@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <extension type="template" version="3.8" client="site" method="upgrade">
     <name>Bulmla!</name>
-    <version>0.1.0</version>
+    <version>0.1.1</version>
     <creationDate>18-Feb-2020</creationDate>
     <author>Patrick McGonigle</author>
     <authorEmail>patrick@mcgonigle.dev</authorEmail>
@@ -46,22 +46,6 @@
                        label="JGLOBAL_DESCRIPTION"
                        description="JGLOBAL_SUBHEADING_DESC"
                        filter="string"/>
-                <field 
-					name="logoFile" 
-					type="media" 
-					label="TPL_BULMLA_LOGO_LABEL"
-					description="TPL_BULMLA_LOGO_DESC" 
-					class="" 
-					default=""/>
-                <field 
-					name="sitetitle"  
-					type="text" 
-					label="JGLOBAL_TITLE"
-					description="JFIELD_ALT_PAGE_TITLE_LABEL"
-					default=""
-					filter="string" 
-				/>
-
                 <field 
 					name="googleFont"
 					type="radio"
