@@ -33,34 +33,7 @@ if ($tagId = $params->get('tag_id', ''))
 		$class .= ' current';
 	}
 
-<<<<<<< HEAD
-	if (in_array($item->id, $path))
-	{
-		$class .= ' is-active';
-
-	}
-	elseif ($item->type === 'alias')
-	{
-		$aliasToId = $item->params->get('aliasoptions');
-
-		if (count($path) > 0 && $aliasToId == $path[count($path) - 1])
-		{
-			$class .= ' is-active';
-		}
-		elseif (in_array($aliasToId, $path))
-		{
-			$class .= ' alias-parent-active';
-		}
-	}
-
-	if ($item->type === 'separator')
-	{
-		$class .= ' navbar-divider';
-	}
-
-=======
 	
->>>>>>> commit on master
 	if ($item->deeper)
 	{
 		$class .= ' deeper';

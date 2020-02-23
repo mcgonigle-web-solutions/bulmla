@@ -1,17 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-<<<<<<< HEAD
-<extension type="template" version="3.8" client="site" method="upgrade">
-    <name>Bulmla!</name>
-    <version>0.1.1</version>
-    <creationDate>18-Feb-2020</creationDate>
-    <author>Patrick McGonigle</author>
-    <authorEmail>patrick@mcgonigle.dev</authorEmail>
-    <copyright>McGonigle</copyright>
-    <description>Bulmla! This is a theme based on the CSS framework, "Bulma".</description>
-
-    <files>
-        <filename>component.php</filename>
-=======
 <extension version="2.5" type="template">
 	<name>Bulmla</name>
 	<creationDate>2020-02-22</creationDate>
@@ -24,7 +11,6 @@
 	<description>Bulmla</description>
 	<files>
 		<filename>index.php</filename>
->>>>>>> commit on master
         <filename>error.php</filename>
         <filename>offline.php</filename>
 		<filename>templateDetails.xml</filename>
@@ -32,33 +18,6 @@
         <filename>template_thumbnail.png</filename>
 		<folder>img</folder>
         <folder>js</folder>
-<<<<<<< HEAD
-        <folder>language</folder>
-    </files>
-
-    <positions>
-        <position>debug</position>
-        <position>logo</position>
-        <position>navigation</position>
-        <position>navigationButtons</position>
-        <position>hero</position>
-        <position>header</position>
-        <position>level</position>
-        <position>aside-right</position>
-        <position>aside-left</position>
-        <position>footer</position>
-    </positions>
-
-    <config>
-        <fields name="params">
-            <fieldset name="advanced">
-                <field name="sitedescription"
-                       type="text"
-                       default=""
-                       label="JGLOBAL_DESCRIPTION"
-                       description="JGLOBAL_SUBHEADING_DESC"
-                       filter="string"/>
-=======
 		<folder>style</folder>
 	</files>
 	<positions>
@@ -78,7 +37,6 @@
         <fields name="params">
             <fieldset name="advanced">
                
->>>>>>> commit on master
                 <field 
 					name="googleFont"
 					type="radio"
@@ -100,9 +58,6 @@
 					default="Open+Sans"
 					showon="googleFont:1" 
 				/>
-<<<<<<< HEAD
-
-=======
 				<field 
 					name="logoFile" 
 					type="media" 
@@ -130,7 +85,6 @@
 					filter="string" 
 				/>
 				
->>>>>>> commit on master
 
             </fieldset>      
         </fields>

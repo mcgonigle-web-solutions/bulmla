@@ -7,7 +7,6 @@ https://projects.mcgonigle.xyz/bulmla
 
 # Release Notes:
 
-
 ## Version 0.1.3
 * Dropdown menu functionality now working properly for sub menu items.
 * Google Fonts can now be added via backend template manager for headings.
