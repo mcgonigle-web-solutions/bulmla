@@ -48,18 +48,18 @@ JHtml::_('behavior.caption');
 		<div class="clearfix"> </div>
 	<?php endif; ?>
 	<?php if ($params->get('show_title')) : ?>
-	<div class="page-header">
-		<h2 itemprop="headline">
+	<div class="title">
+		<h2 itemprop="subtitle">
 			<?php echo $this->escape($this->item->title); ?>
 		</h2>
 		<?php if ($this->item->state == 0) : ?>
-			<span class="label label-warning"><?php echo JText::_('JUNPUBLISHED'); ?></span>
+			<span class="label is-warning"><?php echo JText::_('JUNPUBLISHED'); ?></span>
 		<?php endif; ?>
 		<?php if (strtotime($this->item->publish_up) > strtotime(JFactory::getDate())) : ?>
-			<span class="label label-warning"><?php echo JText::_('JNOTPUBLISHEDYET'); ?></span>
+			<span class="label is-warning"><?php echo JText::_('JNOTPUBLISHEDYET'); ?></span>
 		<?php endif; ?>
 		<?php if ((strtotime($this->item->publish_down) < strtotime(JFactory::getDate())) && $this->item->publish_down != JFactory::getDbo()->getNullDate()) : ?>
-			<span class="label label-warning"><?php echo JText::_('JEXPIRED'); ?></span>
+			<span class="label is-warning"><?php echo JText::_('JEXPIRED'); ?></span>
 		<?php endif; ?>
 	</div>
 	<?php endif; ?>

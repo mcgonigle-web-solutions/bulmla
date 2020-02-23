@@ -1,92 +1,41 @@
-<?php
-/**
- * @package    Joomla.Site
- * @subpackage Template.bulmla
- *
- * @author     Patrick McGonigle <patrick@mcgonigle.dev>
- * @copyright  McGonigle
- * @license    GNU General Public License version 2 or later; see LICENSE.txt
- * @link       www.mcgonigle.dev
- */
 
-defined('_JEXEC') or die;
+<!-- The header detals are located here -->
+<?php include 'partials/header.php';?>
 
-use Joomla\CMS\Language\Text;
-
-require_once JPATH_THEMES . '/' . $this->template . '/helper.php';
-
-tplBulmlaHelper::loadCss();
-tplBulmlaHelper::loadJs();
-tplBulmlaHelper::setMetadata();
-
-// Use of Google Font
-if ($this->params->get('googleFont'))
-{
-	$font = $this->params->get('googleFontName');
-
-	// Handle fonts with selected weights and styles, e.g. Source+Sans+Condensed:400,400i
-	$fontStyle = str_replace('+', ' ', strstr($font, ':', true) ?: $font);
-
-	JHtml::_('stylesheet', 'https://fonts.googleapis.com/css?family=' . $font);
-	$this->addStyleDeclaration("
-	h1, h2, h3, h4, h5, h6, .site-title {
-		font-family: '" . $fontStyle . "', sans-serif;
-	}");
-}
-
-?>
-<!DOCTYPE html>
-<html lang="<?php echo $this->language; ?>" dir="<?php echo $this->direction; ?>">
-<head>
-	<jdoc:include type="head" />
-	<script src="https://kit.fontawesome.com/d70afb009a.js"></script>
-</head>
 <body class="<?php echo tplBulmlaHelper::setBodySuffix(); ?>">
-
-<?php echo tplBulmlaHelper::setAnalytics(0, 'your-analytics-id'); ?>
-
-
-<a href="<?php echo $this->baseurl; ?>/">
-    <?php if ($this->params->get('sitedescription')) : ?>
-        <?php echo '<div class="site-description">' . htmlspecialchars($this->params->get('sitedescription'), ENT_COMPAT, 'UTF-8') . '</div>'; ?>
-    <?php endif; ?>
-</a>
-
 <nav class="navbar container" role="navigation" aria-label="main navigation">
-	<div class="navbar-brand">
-	<jdoc:include type="modules" name="logo" style="none" />	
-	<a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="Menu">
-		<span aria-hidden="true"></span>
-		<span aria-hidden="true"></span>
-		<span aria-hidden="true"></span>
-	</a>
-	</div>
-	<div id="Menu" class="navbar-menu">
-	<jdoc:include type="modules" name="navigation" style="none" class="navbar" />
-	<div class="navbar-end">
-	<div class="navbar-item">
-	<div class="field is-grouped">
+  <div class="navbar-brand">
+    <a class="navbar-item is-link" href="<?php echo $this->baseurl; ?>/">
+    <?php echo $logo; ?>
+    <?php if ($this->params->get('sitedescription')) : ?>
+    <?php echo '<div class="title">' . htmlspecialchars($this->params->get('sitedescription'), ENT_COMPAT, 'UTF-8') . '</div>'; ?>
+    <?php endif; ?>
+  </a>
+
+    <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarMainMenu">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div id="navbarMainMenu" class="navbar-menu">
+    <jdoc:include type="modules" name="navigation" /> 
+    <div class="navbar-end">
+      <div class="navbar-item">
+    <div class="field is-grouped">
 	<jdoc:include type="modules" name="navigationButtons" style="none" />	
 	</div>
-	</div>
-	</div>
-	</div>
+      </div>
+    </div>
+  </div>
 </nav>
 
+<!-- Hero Section -->
 <?php if ($this->countModules( 'hero' )) : ?>
 <jdoc:include type="modules" name="hero" style="hero" />
 <?php endif; ?>
 
-<section id="tiles" class="m-t-lg">
-	<div class="container">
-		<div class="tile is-ancestor">
-			<?php if ($this->countModules( 'tiles' )) : ?>
-		<jdoc:include type="modules" name="tiles" style="tiles" />
-		<?php endif; ?>
-		</div>
-	</div>
-</section>
-
+<!-- Level Section -->
 <section id="level">
 	<nav class="level is-mobile container">
 		<?php if ($this->countModules( 'level' )) : ?>
@@ -95,40 +44,37 @@ if ($this->params->get('googleFont'))
 	</nav>
 </section>
 
-<main id="main" class="container">
+<!-- Main Body -->
+<main id="main">
 <jdoc:include type="message" />
-<div class="columns">
-	<div class="column is-three-quarters">
-	<head>
-		<?php if ($this->countModules( 'head' )) : ?>
-		<jdoc:include type="modules" name="head" style="none" />
-		<?php endif; ?>
-	</head>
-	<jdoc:include type="component"/>
+	<div class="container p-md">
+		<div class="columns">
+			
+			<!-- Left side column-->
+			<?php if ($this->countModules('aside-left')) : ?>
+			<div class="column is-one-quarter">
+				<jdoc:include type="modules" name="aside-left" style="aside" />
+			</div>
+			<?php endif; ?>
+			
+			<!-- Main content/component -->
+			<div class="column">
+				<?php if ($this->countModules( 'header' )) : ?>
+				<jdoc:include type="modules" name="header" style="none" />
+				<?php endif; ?>
+				<jdoc:include type="component"/>
+			</div>
+
+			<!-- Right side column-->
+			<?php if ($this->countModules('aside-right')) : ?>
+			<div class="column is-one-quarter">
+				<jdoc:include type="modules" name="aside-right" style="aside" />
+			</div>
+			<?php endif; ?>
+			
+		</div>
 	</div>
-	<div class="column">
-	<?php if ($this->countModules('aside-right')) : ?>
-		<jdoc:include type="modules" name="aside-right" style="asideRight" />
-	<?php endif; ?>
-	</aside>
-	</div>
-</div>
 </main>
 
-<footer class="footer m-t-lg">
-<div class="content has-text-centered">
-<p>&copy; <?php echo date('Y'); ?> <?php echo tplBulmlaHelper::getSitename(); ?></p>
-<p>
-<p>
-
-</p>
-<strong>Bulma</strong> by <a href="https://jgthms.com">Jeremy Thomas</a>. The source code is licensed
-<a href="http://opensource.org/licenses/mit-license.php">MIT</a>.
-</p>
-</div>
-</footer>
-
-
-<jdoc:include type="modules" name="debug" style="none" />
-</body>
-</html>
+<!-- The footer details are located here -->
+<?php include 'partials/footer.php';?>

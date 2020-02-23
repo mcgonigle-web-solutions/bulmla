@@ -33,6 +33,7 @@ if ($tagId = $params->get('tag_id', ''))
 		$class .= ' current';
 	}
 
+<<<<<<< HEAD
 	if (in_array($item->id, $path))
 	{
 		$class .= ' is-active';
@@ -57,6 +58,9 @@ if ($tagId = $params->get('tag_id', ''))
 		$class .= ' navbar-divider';
 	}
 
+=======
+	
+>>>>>>> commit on master
 	if ($item->deeper)
 	{
 		$class .= ' deeper';

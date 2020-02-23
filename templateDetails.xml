@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+<<<<<<< HEAD
 <extension type="template" version="3.8" client="site" method="upgrade">
     <name>Bulmla!</name>
     <version>0.1.1</version>
@@ -10,17 +11,28 @@
 
     <files>
         <filename>component.php</filename>
+=======
+<extension version="2.5" type="template">
+	<name>Bulmla</name>
+	<creationDate>2020-02-22</creationDate>
+	<author>Patrick McGonigle</author>
+	<authorEmail>john@example.com</authorEmail>
+	<authorUrl>http://projects.mcgonigle.xyz/bulmla</authorUrl>
+	<copyright>Patrick McGonigle 2020</copyright>
+	<license>GNU/GPL</license>
+	<version>0.1.3</version>
+	<description>Bulmla</description>
+	<files>
+		<filename>index.php</filename>
+>>>>>>> commit on master
         <filename>error.php</filename>
         <filename>offline.php</filename>
-        <filename>index.php</filename>
-        <filename>helper.php</filename>
-        <filename>templateDetails.xml</filename>
+		<filename>templateDetails.xml</filename>
         <filename>template_preview.png</filename>
         <filename>template_thumbnail.png</filename>
-        <folder>css</folder>
-        <folder>html</folder>
-        <folder>images</folder>
+		<folder>img</folder>
         <folder>js</folder>
+<<<<<<< HEAD
         <folder>language</folder>
     </files>
 
@@ -46,6 +58,27 @@
                        label="JGLOBAL_DESCRIPTION"
                        description="JGLOBAL_SUBHEADING_DESC"
                        filter="string"/>
+=======
+		<folder>style</folder>
+	</files>
+	<positions>
+		<position>breadcrumb</position>
+		<position>left</position>
+		<position>right</position>
+		<position>logo</position>
+		<position>navigation</position>
+		<position>navigationButtons</position>
+		<position>hero</position>
+		<position>header</position>
+		<position>aside-right</position>
+		<position>aside-left</position>
+		<position>footer</position>
+	</positions>
+	<config>
+        <fields name="params">
+            <fieldset name="advanced">
+               
+>>>>>>> commit on master
                 <field 
 					name="googleFont"
 					type="radio"
@@ -67,7 +100,37 @@
 					default="Open+Sans"
 					showon="googleFont:1" 
 				/>
+<<<<<<< HEAD
 
+=======
+				<field 
+					name="logoFile" 
+					type="media" 
+					label="TPL_BULMLA_LOGO_LABEL"
+					description="TPL_BULMLA_LOGO_DESC" 
+					class="" 
+					default=""
+				/>
+
+				<field 
+					name="sitetitle"  
+					type="text" 
+					label="JGLOBAL_TITLE"
+					description="JFIELD_ALT_PAGE_TITLE_LABEL"
+					default=""
+					filter="string" 
+				/>
+
+				<field 
+					name="sitedescription"  
+					type="text" 
+					label="JGLOBAL_DESCRIPTION"
+					description="JGLOBAL_SUBHEADING_DESC"
+					default=""
+					filter="string" 
+				/>
+				
+>>>>>>> commit on master
 
             </fieldset>      
         </fields>

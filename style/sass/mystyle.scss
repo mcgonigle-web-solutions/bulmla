@@ -4,12 +4,13 @@
 @import url('https://fonts.googleapis.com/css?family=Nunito:400,700');
 @import url('https://fonts.googleapis.com/css?family=Major+Mono+Display&display=swap');
 
-
-//branding for Bulmla template
+//branding for (client name)
 $purple: #3F3D56;
 $pink: #F50057;
 $blue: #575A89;
-$logofont: 'Major Mono Display', monospace;
+$red: #980000;
+
+$logo: 'Major Mono Display', sans-serif;
 
 // Custom global variables
 $family-sans-serif: "Nunito", sans-serif;
@@ -17,26 +18,27 @@ $primary: $purple;
 $link: $pink;
 $info: $blue;
 
-//Custom logo font
-.bulmalogo {
-    font-family: $logofont ;
-    font-size: 3em;
+
+// Logo
+.site-title{
+    color: $link;
+    font-size: 2.5em;
 }
 
-.logo {
-    paddin
+// Reposition modal close button
+.modal-close {
+    position: relative !important;
+    right: auto !important;
+    top: auto !important;
+    width: auto !important;
 }
 
-main {
-    margin-top: 20px !important;
-}
-
-.loginformbuttons {
-    padding-top: 10px;
+// Search box
+.search input {
+    width: 100% !important;
 }
 
 //Padding
-
 .m-none { margin: 0; }
 .p-none { padding: 0; }
 .m-t-none { margin-top: 0; }
@@ -118,7 +120,11 @@ main {
 .m-l-xxl { margin-left: 8rem; }
 .p-l-xxl { padding-left: 8rem; }
 
-
-// Import Bulma (v0.8.0)
-@import "bulma/bulma.sass";
-
+//Import Bulma
+@import "bulma/utilities/_all";
+@import "bulma/base/_all";
+@import "bulma/elements/_all";
+@import "bulma/form/_all";
+@import "bulma/components/_all";
+@import "bulma/grid/_all";
+@import "bulma/layout/_all";

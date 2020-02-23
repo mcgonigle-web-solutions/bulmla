@@ -51,7 +51,7 @@ function modChrome_hero( $module, &$params, &$attribs )
  * Module chrome for rendering the module in aside-right
  */
 
-function modChrome_asideRight( $module, &$params, &$attribs ) 
+function modChrome_aside( $module, &$params, &$attribs ) 
 {
 	
 	echo '<div class="tile is-ancestor">';
